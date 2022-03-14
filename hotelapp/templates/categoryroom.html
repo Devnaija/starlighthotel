@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Single Category {% endblock title %}
+{% block content %}
+  
+<div class="container-fluid mt-5 mb-5">
+    <div class="container-fluid room mt-4">
+        <div class="card bg-dark text-white">
+          <img src="{% static 'img/hotelbanner.jpg' %}" class="card-img">
+        </div>  
+    </div>
+    <br>
+    <hr>
+    <h3 style="text-align: center;">{{category.name}}</h3>
+    <hr>
+    <div class="container-fluid mx-auto">
+        <div class="row row-cols-1 row-cols-md-3 justify-content-center g-3 pt-5">
+        {% if category %}
+            {% for item in category %}
+                <div class="col">
+                    <div class="card">
+                        <img src="{{item.image.url}}" class="card-img" height="200">
+                        <div class="card-body mt-3">
+                            <h5 class="card-title"> {{item.name}}</h5>
+                            <a href="{% url 'details' item.id %}" class="btn">View</a>
+                        </div>
+                    </div>  
+                </div>
+            {% endfor %}
+          {% endif %}  
+          <p style="text-align: center; padding-top: 80px;" a href="{% url 'categories' %}" class="btn"><b>Back to all Categories</b></a>
+        </div>  
+    </div>  
+    {% endblock content %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load mathfilters %}
+{% block title %}Bookings{% endblock title %}
+
+{% block content %}
+<hr>
+<h3 style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">BOOKINGS</h3>
+<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-1 justify-content-center">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                            <th scope="col">Remove</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Check-in</th>
+                            <th scope="col">Check-out</th>
+                            <th scope="col">Adults</th>
+                            <th scope="col">Child(ren)</th>
+                            <th scope="col">Room(s)</th>
+                            <th scope="col">Night(s)</th>
+                            <th scope="col">Price per night</th>
+                            <th scope="col">Value(#)</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                        {% if bookings %}
+                            {% for item in bookings  %}
+                            <tr>
+                                <td>
+                                    <form method="POST" action="{% url 'deletebooking' %}"> 
+                                        {% csrf_token %}
+                                            <input type="hidden" name="itemid" value="{{item.id}}">
+                                            <button type="submit" class="btn-light"><b style="color: rgb(148, 19, 19);">&times;</b></button>
+                                    </form>
+                                </td>
+                                <td scope="row">{{item.room.name}}</td>
+                                <td>{{item.check_in}}</td>     
+                                <td>{{item.check_out}}</td>
+                                <td>{{item.adults}}</td>
+                                <td>{{item.kids}}</td> 
+                                <td>{{item.quantity}}</td>
+                                <td>{{item.nights}}</td>    
+                                <td>#{{item.room.price|floatformat:2|intcomma}}</td>
+                                <td>#{{item.room.price|mul:item.nights|floatformat:2|intcomma}}</td>
+                            </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Subtotal: #{{subtotal}} <br>
+                            <hr>
+                            Vat: #{{vat}} <br>
+                            <hr>  
+                            Total: #{{total}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a href="{% url 'finish' %}" style="color: rgb(148, 19, 19);font-family: Verdana, Geneva, Tahoma, sans-serif;">Finish</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

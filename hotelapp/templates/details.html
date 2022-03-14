@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Room Details {% endblock title %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="container-fluid room mt-4">
+    <div class="card bg-dark text-white">
+      <img src="{% static 'img/hotelbanner.jpg' %}" class="card-img">
+    </div>  
+  </div>
+  <br>
+  <hr>
+  <h3 style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{details.name}}</h3>
+  <hr>
+  <div class="container-fluid mx-auto">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3"></div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 justify-content-center">
+        <div class="col">
+          <div class="card my-2">
+            <div class="card">
+              <img src="{{details.image.url}}" class="card-img" alt="{{details.name}}">
+            </div>
+            <form method="POST" action="{% url 'makereservation' %}" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" >
+            {% csrf_token %}
+              <p style="font-size: small; padding-left: 5px;">Featuring {{details.description}}</p>
+              <p style="padding-left: 5px;">Price: <b>#{{details.price}}</b> per night</p>
+              <div class="form-row">
+                <div class="col">
+                  <label for="check_in" style="padding: 5px;">Check-in: <label>
+                    <input type="date" name="check_in" class="form-control" required>
+                    <input type="hidden" name="itemid" value="{{details.id}}">
+                </div>
+                <div class="col">
+                  <label for="check_out" style="padding: 5px;">Check-out: <label>
+                  <input type="date" name="check_out" class="form-control" required>
+                  <input type="hidden" name="itemid" value="{{details.id}}">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <label for="adults" style="padding: 5px;">Adults: <label>
+                    <input type="number" name="adults" min="{{details.min_adults}}" max="{{details.max_adults}}" value="1" class="form-control" required>
+                </div>
+                <div class="col">
+                  <label for="children" style="padding: 5px;">Children: <label>
+                  <input type="number" name="kids" min="{{details.min_kids}}" max="{{details.max_kids}}" value="1" class="form-control" required>
+                </div>
+                <div class="col">
+                  <label for="quantity" style="padding: 5px;">Night(s): <label>
+                  <input type="number" name="quantity" min="{{details.min_quantity}}" max="{{details.max_quantity}}" value="1" class="form-control" required>
+                  <input type="hidden" name="itemid" value="{{details.id}}">
+                </div>
+              </div>
+              <p style="font-style: italic; color: rgb(148, 19, 19);font-family: Verdana, Geneva, Tahoma, sans-serif; padding-left: 5px;font-size: smaller;"><i class="bi bi-person-fill"> maximum of {{details.max_occupants}} occupants</i></p>
+              <div class="card btn">
+                <button type="submit" class="btn">Make reservation</button>
+              </div>
+            </form>
+          </div>  
+        </div> 
+      </div> 
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3"></div>
+   </div>
+ </div>   
+</div>   
+{% endblock content %}
+
+
+

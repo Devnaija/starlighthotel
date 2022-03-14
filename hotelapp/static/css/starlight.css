@@ -1,0 +1,288 @@
+.navbar-brand img {
+  height: 10vh;
+  padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.navbar {
+  color: rgb(148, 19, 19);
+  background: white;
+}
+.navbar-toggler-icon{
+  font-size: 0.8em;
+  color: white;
+}
+.navbar-toggler{
+  padding: 5px;
+}
+.nav {
+  background: white;
+  height: 5vh;
+}
+#navbarSupportedContent .btn {
+  color: white;
+  padding: initial;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-top: 4px;
+  border-radius: 5px;
+}
+.nav-item a {
+  color: rgb(148, 19, 19);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+}
+#navbarSupportedContent a {
+  color: rgb(148, 19, 19);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+}
+.alert{
+  color: rgb(148, 19, 19);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.carousel-item img {
+  height: 60vh;
+  margin: auto;
+}
+.imgbt{
+  padding-left: 15px;
+}
+.footer {
+  background: white;
+}
+.flogo img{
+  height: 20vh;
+}
+
+.socials a {
+  padding: 5px;
+  color: rgb(148, 19, 19);
+}
+.room img{
+  height: 50vh;
+}
+.grids {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  background: white;
+  color: white;
+}
+.container{
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+  gap: 5px;
+  box-sizing: border-box;
+}
+.container .box1{
+  position: relative;
+  background: url(../img/hotrestu4.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 30px 30px 40px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0.5px solid rgb(148, 19, 19);
+}
+.container .box2{
+  position: relative;
+  background: url(../img/hotelgym.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 30px 30px 40px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0.5px solid rgb(148, 19, 19);
+}
+.container .box3{
+  position: relative;
+  background: url(../img/hotindswm.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 30px 30px 40px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0.5px solid rgb(148, 19, 19);
+}
+.transbox1 {
+  margin: 6px;
+  background-color: rgb(24, 23, 23);
+  border: 1px solid white;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+.transbox2 {
+  margin: 6px;
+  background-color: rgb(24, 23, 23);
+  border: 1px solid white;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+.transbox3 {
+  margin: 5px;
+  background-color: rgb(24, 23, 23);
+  border: 1px solid white;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+.transbox1 h5 {
+  font-weight: bold;
+  margin: 5%;
+  font-size: large;
+}
+.transbox2 h5 {
+  font-weight: bold;
+  margin: 5%;
+  font-size: large;
+}
+.transbox3 h5 {
+  font-weight: bold;
+  margin: 5%;
+  font-size: large;
+}
+.card {
+  border: 0.5px solid rgb(148, 19, 19);
+}
+.card-img {
+  height: 20vh;
+  position: relative;
+}
+.recap {
+  color: rgb(148, 19, 19);
+  font-size: large;
+  font-weight: bold;
+}
+.btn {
+  color: white;
+  background-color: rgb(148, 19, 19);
+  padding: initial;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.btn:hover {
+  color: white;
+}
+.row {
+  border-radius: 2px;
+}
+.grids2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 8vh;
+  background: white;
+  color: white;
+}
+.accordion {
+  max-width: 600px;
+  box-shadow: 0 0 5px black;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  background: white;
+}
+.accordion__label{
+    padding-right: 25px;
+    padding-left: 10px;
+}
+.accordion__content {
+  padding: 5px 5px;
+}
+.accordion__label {
+  display: block;
+  font-size: large;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+}
+.accordion__label:hover {
+  background: rgb(204, 64, 64);
+  color: white;
+}
+
+.accordion__label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%2394131399;" /></svg>');
+  background-size: contain;
+  transition: transform 0.4s;
+}
+.accordion__content {
+  background: #ffffff;
+  line-height: 1.2;
+  font-size: 0.9em;
+  display: none;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+  display: block;
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+  transform: translateY(-25%) rotate(0.5turn);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

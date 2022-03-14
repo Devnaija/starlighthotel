@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+
+{% block banner %} {% include 'carousel.html' %} {% endblock banner %}
+
+{% block content %}
+<p id="top"></p>
+<div class="container-fluid shadow p-3 mb-3 bg-body rounded pt-2">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-center pt-3">
+      <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight:bold;">WELCOME <br> TO <br> STARLIGHT HOTEL</h1>
+      <p style="font-style: italic; font-weight: light; font-size:large; color: rgb(148, 19, 19); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Luxury, Comfort and Hospitality</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+      <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;">Explore the new Starlight Hotel Lagos, centrally located in Lekki-Lagos. Our brand new hotel in Lagos boasts 90 guestrooms, including 5 contemporary loft suites with first class amenities to ensure a comfortable and productive stay for work or play. 
+        With 8 meeting rooms on the 2nd floor, fully equipped with state-of-the-art A/V technology and Free high-speed, wireless Internet, we are ready for your business.</p>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+      <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size:large;">At Starlight Hotel, our goal has always been to offer more than a luxurious place to sleep, more than exceptional business facilities with the latest technology, more than personalized service, more than outstanding food and amenities.
+      Our goal is to provide each guest with a hotel experience unlike any other – all at reasonably budget friendly rates. Whichever Starlight location you choose, be rest assured of our renowned hospitality and homely ambiance.</p> </div>
+    </div>
+  </div> 
+  <hr>
+  <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Key Amenities</h2>
+  <hr>
+  <div class="grids mb-3">
+    <div class="container">
+      <div class="box1">
+        <div class="transbox1">
+          <h5 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> High-end Restaurant</h5> 
+        </div>
+      </div>
+      <div class="box2">
+        <div class="transbox2">
+            <h5 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> Fitness and Well-being</h5> 
+        </div>
+      </div>
+      <div class="box3">
+        <div class="transbox3">
+          <h5 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Indoor and Outdoor Pool</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid shadow mb-5 bg-body rounded text-center">
+    <div class="key">
+      <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Our Services</h2>
+      <hr>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">24-hour Room Service</h3> 
+        <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:large">At Starlight, Our room service marshals work round the clock to meet your needs. Courteous and professional,
+          Starlight is sure to deliver top class service to you.</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Fully equipped Gymasium</h3>
+          <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:large">Burn those calories and relax! Stay fit and healthy in our well-equipped gymnasium.
+          Starlight doesn’t only look after your relaxation and enjoyment but also your Well-being.</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Restaurant</h3>
+          <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:large">Starlight restaurant and bar is open 24 hours daily, serving you delicious Continental and Foreign cuisine.</p>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+          <h3 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Indoor and Outdoor Pools</h3>
+          <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:large">We have very clean pools,large enough for your evening gathering and various kinds pool parties 
+          with well trained attendants to make your experience memorable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Our Room Categories</h2>
+  <hr>
+  <div class="container-fluid mx-auto">
+    <div class="row row-cols-1 row-cols-md-4 justify-content-center g-3 pt-1">
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'img/suite1.jpg' %}" class="card-img" height="200">
+          <div class="card-body">
+            <h6 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Business Suite</h6>
+            <a href="{% url 'categories' %}" class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'img/famrmnw2.jpg' %}" class="card-img" height="200">
+          <div class="card-body">
+            <h6 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Family Room</h6>
+            <a href="{% url 'categories' %}" class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'img/ecoroom1.jpg' %}" class="card-img" height="200">
+          <div class="card-body">
+            <h6 class="card-title" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Economy room</h6>
+            <a href="{% url 'categories' %}" class="btn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Promotions and Offers</h2> 
+  <hr>
+  <div class="container-fluid mx-auto">
+    <div class="row row-cols-1 row-cols-md-4 justify-content-center g-2 pt-1">
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'img/elderly1.jpg' %}" class="card-img" height="300">
+          <div class="card-body">
+            <h6 class="card-title" style="font-weight: bold;color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Senior Discount</h6>
+            <p class="card-text" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">We appreciate our seniors! And so, our seniors 62 years or older get to 
+              save at least 10% on their room rate at Starlight hotel with our senior discount deals.</p>   
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="{% static 'img/promopic.jpg' %}" class="card-img" height="300">
+          <div class="card-body">
+            <h6 class="card-title" style="font-weight: bold;color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Membership Deals</h6>
+            <p class="card-text" style="color: black;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Enjoy much lower prices when you book directly from our website. <br>
+               Also,get discounted prices with Starlight membership points.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    
+  <hr>
+  <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Explore Our Gallery</h2>
+  <hr>
+  <div class="container-fluid mx-auto">
+    <div class="row row-cols-1 row-cols-md-5 justify-content-center g-3">
+      <div class="col">
+        <div class="card">
+          <a href="{% url 'gallery' %}"><img src="{% static 'img/ecobath1.jpg' %}" class="card-img-top"></a> 
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <a href="{% url 'gallery' %}"><img src="{% static 'img/hotellobby.jpg' %}" class="card-img-top"></a>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <a href="{% url 'gallery' %}"><img src="{% static 'img/suitebath1.jpg' %}" class="card-img-top">          
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Frequently asked questions</h2>
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3"></div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+        <div class="accordion">
+          <div>
+            <input type="radio" name="frequent_accordion" id="section1" class="accordion__input">
+            <label for="section1" class="accordion__label" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Does Starlight offer free wifi?</label>
+            <div class="accordion__content" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <p>Yes! Our esteemed guests can enjoy fast, wireless service from anywhere in the hotel.</p>
+            </div>
+          </div>
+          <div>
+            <input type="radio" name="frequent_accordion" id="section2" class="accordion__input">
+            <label for="section2" class="accordion__label" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Does Starlight offer complimentary breakfast?</label>
+            <div class="accordion__content" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <p>Complimentary breakfast is available to our business suites and family rooms 
+                and also available on request to our economy guestrooms with acquired Starlight points. 
+                More info on this is listed on our Promotions and offers section.</p>
+            </div>
+          </div>
+          <div>
+            <input type="radio" name="frequent_accordion" id="section3" class="accordion__input">
+            <label for="section3" class="accordion__label" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Does Starlight allow smoking?</label>
+            <div class="accordion__content" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <p>No. Starlight is a smoke free hotel. Smoking will attract a fine.</p>
+            </div>
+          </div>
+          <div>
+            <input type="radio" name="frequent_accordion" id="section4" class="accordion__input">
+            <label for="section4" class="accordion__label" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Does Starlight allow pets?</label>
+            <div class="accordion__content" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <p>Yes. Guests are allowed to bring pets. Do endeavour to speak to a representative for further clarifications.</p>
+            </div>
+          </div>
+          <div>
+            <input type="radio" name="frequent_accordion" id="section5" class="accordion__input">
+            <label for="section5" class="accordion__label" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">What is the address of Starlight Hotel?</label>
+            <div class="accordion__content" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <p>Starlight Hotel is located at 301 Victoria way, Allen road, victoria island-lagos.</p>
+            </div>
+          </div>
+          <div>
+            <input type="radio" name="frequent_accordion" id="section6" class="accordion__input">
+            <label for="section6" class="accordion__label" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">What are check_in and check_out times at Starlight?</label>
+            <div class="accordion__content" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <p>Check_in is at 12:00 noon and check_out is at 12:00 noon.</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-3"></div>  
+    </div>
+  </div>
+
+  <hr>
+  <div class="container-fluid">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6751448177874!2d3.4494410147702483!3d6.435754495343793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf73c138dbedb%3A0x6ce2cd9ce683c562!2sThe%20Palms%20Shopping%20Mall!5e0!3m2!1sen!2sng!4v1646639779450!5m2!1sen!2sng" width="100%" height="100%" style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <hr>
+  <div class="container-fluid pt-3">
+    <p style="color: rgb(148, 19, 19); font-size: small; font-weight: light;text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">The health and safety of our guests is our top priority:<u style="text-decoration: underline; font-weight: bold;color: rgb(148, 19, 19)"> COVID-19 updates and what to expect at our hotel.</u></p></a>
+  </div>
+  <div class="container-fluid">
+   <p style="text-align: center;"><a href="#top" style="color: rgb(148, 19, 19);font-style: italic;text-align: center;">Go to top</a></p>
+  </div>
+</div>      
+{% endblock content %}

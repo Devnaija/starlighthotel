@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Payment completed{% endblock title %}
+{% block content %}
+
+
+<div class="container-fluid mt-5 mb-5 completed">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3"></div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 p-5 shadow-lg mb-5 bg-white rounded">
+        <h4 style="color: rgb(148, 19, 19); text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">TRANSACTION SUCCESSFUL!!!</h4>
+        <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: large;">
+            Dear  <span style="color: rgb(148, 19, 19);"> {{client.first_name}}</span> your payment was successful and your reservation has been entered into our system. <br>
+            Your room number will be given to you on your arrival at the hotel. <br>
+            Enjoy your stay at Starlight Hotel.
+        </p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3"></div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

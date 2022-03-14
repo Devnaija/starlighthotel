@@ -1,0 +1,196 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/starlight.css' %}">
+    <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <title>Starlight Hotel | {% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    {% else %} 
+    <ul class="nav justify-content-center">       
+      <li class="nav-item">
+        <a class="nav-link active"><i class="bi bi-info-circle"></i> Info</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'signin' %}"><i class="bi bi-person-plus"></i> Login/Signup</a>
+      </li>
+    {% endif %}
+    </ul>
+    <div class="container-fluid"> 
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light shadow bg-body rounded">
+        <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/mylogo.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+           {% if user.is_authenticated %}
+           <li class="nav-item active">
+            <a class="nav-link">Hello, {{user.first_name}} <span class="sr-only">(current)</span></a>
+          </li>
+          {% else %}
+           {% endif %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=" {% url 'rooms' %}">Rooms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'restaurant' %}">Restaurant</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'fitness' %}">Fitness</a>
+            </li>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Contact
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg> 09066012850</a>
+                  <a class="dropdown-item" ><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg> 09066012850</a>
+                  <a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg> 09066012850</a>
+                  <a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg> 09066012850</a>
+                </div>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'mybookings' %}">My Bookings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'history' %}">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link btn" href="{% url 'rooms' %}">Check rates</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+      
+      {% if messages %}
+        {% for item in messages  %}
+        <div class="alert alert-light alert-dismissible fade show" role="alert" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+          {{item}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+      {% endif %}
+        
+      {% block banner %} {% endblock banner %}
+
+      {% block content %}{% endblock content %}
+      <div class="container-fluid text-center shadow-lg p-2 mt-4 mb-1 bg-body rounded mt-2 recap">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+            <a href="{% url 'index' %}" style="color: rgb(148, 19, 19); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: large;">Home</a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+            <a href="{% url 'rooms' %}" style="color: rgb(148, 19, 19); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: large;">Rooms</a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+            <a href="{% url 'restaurant' %}" style="color: rgb(148, 19, 19); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: large;">Restaurant</a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+            <a href="{% url 'fitness' %}" style="color: rgb(148, 19, 19); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: large;">Fitness</a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+            <a href="{% url 'gallery' %}" style="color: rgb(148, 19, 19); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: large;">Gallery</a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+            <a href="{% url 'mybookings' %}" style="color: rgb(148, 19, 19); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: large;">My Bookings</a>
+          </div>
+        </div>
+      </div> 
+
+      <div class="container-fluid pt-3 mt-2 footer">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3 flogo">
+          <a href="{% url 'index' %}"><img src="{% static 'img/mylogo.png' %}"></a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2 links" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;">
+            <h4 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight:bold">Quick Links</h4> 
+              <a href="{% url 'index' %}" style="color: black;">Home</a> <br>
+              <a href="{% url 'rooms' %}" style="color: black;">Rooms</a> <br>
+              <a href="{% url 'categories' %}" style="color: black;">Categories</a> <br>
+              <a href="{% url 'gallery' %}" style="color: black;">Gallery</a><br>
+              <a href="{% url 'signin' %}" style="color: black;">Sign-in</a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;">
+            <h4 style="font-weight: bold;">Contact us</h4>
+            <a>
+              09066012850 <br>
+              09066012850 <br>
+              09066012850 <br>  
+              09066012850 <br>
+              contact@starlighthotel.com 
+            </a>  
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-3" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;">
+            <a>
+            <h4 style="font-weight: bold;">Our Address</h4>
+            <span>1 Bisway St, Maroko 106104, Lekki, Lagos-Nigeria</span>
+            </a>
+          </div>
+          <div class="col-12 col-sm-12 col-md-2 col-lg-2 socials" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold;">
+            <h4 style="font-weight: bold;">Our Socials</h4>
+            <a href="https://www.instagram.com/robentaa"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.twitter.com/oh_itsrobby"><i class="bi bi-twitter"></i></a>
+            <a href="https://wa.me/2349066012850?text=I%27d%20like%20to%20make%20an%20enquiry"><i class="bi bi-whatsapp"></i></a>
+            <a href="mailto:robentaahimie4@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+            <a href="https://www.pinterest.com/robentaa"><i class="bi bi-pinterest"></i></a>
+          </div>
+        </div>
+        <hr>
+        <div class="container-fluid text-center copy" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+         <span> &copy;2021 Starlight Hotel Group. <br>
+         All rights reserved.</span>
+         <p style="font-family: monospace;">Designed by Robenta</p>
+        </div> 
+      </div>
+    </div>     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script></div>
+  </body>
+</html>
+
+
+
+
+
+
+
+

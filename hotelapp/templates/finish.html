@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% load humanize %}
+{% block title %}Payment{% endblock title %}
+
+{% block content %}
+  <hr>
+  <h3 style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">FINISH BOOKING</h3>
+  <hr>
+<div class="container-fluid mt-5 mb-5">
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-1 justify-content-center">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                            <th scope="col">Name</th>
+                            <th scope="col">Check-in</th>
+                            <th scope="col">Check-out</th>
+                            <th scope="col">Total Occupant(s)</th>
+                            <th scope="col">Room(s)</th>
+                            <th scope="col">Night(s)</th>
+                            <th scope="col">Price per night</th>
+                            <th scope="col">Total Value(+vat)</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        {% if bookings %}
+                            {% for item in bookings %}
+                                <tr>
+                                    <th scope="row">{{item.room.name}}</th>
+                                    <td>{{item.check_in}}</td>     
+                                    <td>{{item.check_out}}</td>  
+                                    <td>{{item.occupants}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{item.nights}}</td>  
+                                    <td>#{{item.room.price|floatformat:2|intcomma}}</td>  
+                                    <td>#{{total}}</td>  
+                                </tr>
+                            {% endfor %}      
+                        {% endif %}
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+        <br><br>
+        <div class="container-fluid mx-auto">
+            <h4 style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Please fill in your info </h4>
+            <br>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3"></div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 justify-content-center">
+                <form method="POST" action="{% url 'makepayment' %}" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="first_name">First Name</label>
+                            <input type="text" name="first_name" value="{{user.first_name}}" placeholder="First Name" id="exampleInputText1" class="form-control" style="padding: 5px;" required>
+                        </div>
+                        <div class="col">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" name="last_name" value="{{user.last_name}}" placeholder="Last Name" id="exampleInputText1" class="form-control" style="padding: 5px;" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="phone">Phone</label>
+                            <input type="text" name="phone" value="{{user.phone}}" placeholder="Phone Number" id="exampleInputText1" class="form-control" style="padding: 5px;" required>
+                        </div>
+                        <div class="col">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" value="{{user.user.email}}" placeholder="Email" id="exampleInputText1" class="form-control" style="padding: 5px;" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="hidden" name="total" value="{{total}}">
+                            <input type="hidden" name="bookings_code" value="{{bookings_code}}">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card btn">
+                        <button type="submit" class="btn">Make Payment</button>
+                    </div>
+                </form> 
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

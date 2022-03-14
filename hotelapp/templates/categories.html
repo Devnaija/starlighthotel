@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Room categories {% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="container-fluid room mt-4">
+    <div class="card bg-dark text-white">
+      <img src="{% static 'img/hotelbanner.jpg' %}" class="card-img">
+    </div>  
+  </div>
+  <br> <br>
+  <hr>
+    <h3 style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Room Categories</h3>        
+  <hr>
+  <div class="container-fluid mx-auto">
+    <div class="row row-cols-1 row-cols-md-3 justify-content-center pt-5">
+      {% if categories %}
+        {% for item in categories %}
+          <div class="col">
+            <div class="card">
+              <img src="{{item.image.url}}" class="card-img" height="150">
+              <div class="card-body">
+                <h6 class="card-title" style="font-weight: bold;">{{item.title}}</h6>
+                <a href="{% url 'categoryroom' item.id %}" class="btn">View</a>
+              </div>
+            </div>  
+          </div>
+        {% endfor %}
+      {% endif %}  
+    </div>  
+  </div>  
+</div>   
+{% endblock content %}   

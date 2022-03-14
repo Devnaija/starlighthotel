@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Signup{% endblock title %}
+
+{% block content %}
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-2"></div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-8 shadow-lg p-3 mb-5 bg-white rounded">
+          <form method="POST" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" action="{% url 'signup' %}">
+          {% csrf_token %}
+            <h4 style="color: rgb(148, 19, 19); text-align: center;">SIGN UP WITH US</h4>
+            <br>
+            <div class="form-group">
+                {{reg.as_p}}
+                <input type="text" name="phone" placeholder="phone">
+            </div>
+            <button type="submit" class="btn">Signup</button>
+          </form>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-2"></div>
+    </div>
+</div>
+{% endblock content %}
+

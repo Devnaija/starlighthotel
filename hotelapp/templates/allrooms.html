@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} All Rooms {% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="container-fluid room mt-4">
+    <div class="card bg-dark text-white">
+      <img src="{% static 'img/hotelbanner.jpg' %}" class="card-img">
+    </div>  
+  </div>
+  <br> <br>
+  <hr>
+    <h3 style="text-align: center;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">All Rooms</h3>        
+  <hr>
+  <div class="container-fluid mx-auto">
+    <div class="row row-cols-1 row-cols-md-3 justify-content-center pt-3">
+      {% if rooms %}
+        {% for item in rooms %}
+          <div class="col">
+            <div class="card my-2">
+              <img src="{{item.image.url}}" class="card-img" height="200">
+              <div class="card-body">
+                <h5 class="card-title" style="font-weight: bold;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{item.name}}</h5>
+                <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> {{item.description}}</p>
+                <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Price: #{{item.price}} per night</b></p>
+                <p style="font-style: italic; color: rgb(148, 19, 19); font-size: smaller;font-family: Verdana, Geneva, Tahoma, sans-serif;"><i class="bi bi-person-fill"> Maximum of {{item.max_occupants}} occupants.</i></p>
+                <a href="{% url 'details' item.id %}" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="btn">View</a>
+              </div>
+            </div>  
+          </div>
+        {% endfor %}
+      {% endif %}  
+    </div>  
+  </div>  
+</div>   
+{% endblock content %}   
